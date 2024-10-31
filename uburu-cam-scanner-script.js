@@ -6,7 +6,9 @@ let stream = null;
 // Turn on camera
 async function turnOnCamera() {
     try {
-        stream = await navigator.mediaDevices.getUserMedia({video: {facingMode: 'environment'}});
+        stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: 'environment'}
+        });
         video.srcObject = stream;
     } catch (error) {
         console.error("Error accessing the camera:", error);
