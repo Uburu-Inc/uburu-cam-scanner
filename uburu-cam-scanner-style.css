@@ -5,7 +5,13 @@
 }
 
 #uburu-controls {
+    display: flex;
     margin-top: 10px;
+    gap: 20px;
+}
+
+#uburu-controls button {
+    padding: .6rem;
 }
 
 #uburu-canvas {
