@@ -1,12 +1,17 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-import axios from "axios";
 import jsPDF from "jspdf";
+import axios from "axios";
 
-export function useUburuPdfScanner({ fileName }) {
-  const uburuVideoRef = useRef(null);
-  const uburuCanvasRef = useRef(null);
-  const [stream, setStream] = useState(null);
-  const [capturedImages, setCapturedImages] = useState([]);
+interface CapturedImage {
+  id: number;
+  data: string;
+}
+
+export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
+  const uburuVideoRef = useRef<HTMLVideoElement | null>(null);
+  const uburuCanvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [stream, setStream] = useState<MediaStream | null>(null);
+  const [capturedImages, setCapturedImages] = useState<CapturedImage[]>([]);
 
   const turnOnUburuScanCamera = useCallback(async () => {
     try {
@@ -17,9 +22,7 @@ export function useUburuPdfScanner({ fileName }) {
       if (uburuVideoRef.current) uburuVideoRef.current.srcObject = mediaStream;
     } catch (error) {
       console.error("Error accessing the camera:", error);
-      console.log(
-        "Could not access the camera. Please check your permissions."
-      );
+      console.log("Could not access the camera. Please check your permissions.");
     }
   }, []);
 
@@ -39,7 +42,7 @@ export function useUburuPdfScanner({ fileName }) {
       uburuCanvas.width = uburuVideo.videoWidth;
       uburuCanvas.height = uburuVideo.videoHeight;
       const context = uburuCanvas.getContext("2d");
-      context.drawImage(
+      context?.drawImage(
         uburuVideo,
         0,
         0,
@@ -47,8 +50,7 @@ export function useUburuPdfScanner({ fileName }) {
         uburuCanvas.height
       );
 
-      // Compress image as JPEG with reduced quality
-      const imgData = uburuCanvas.toDataURL("image/jpeg", 0.7); // 70% quality
+      const imgData = uburuCanvas.toDataURL("image/jpeg", 0.7);
       const imgId = Date.now();
       console.log("Captured image data:", imgData);
       setCapturedImages((prevImages) => [
@@ -60,7 +62,7 @@ export function useUburuPdfScanner({ fileName }) {
     }
   }, []);
 
-  const deleteUburuImage = useCallback((imgId) => {
+  const deleteUburuImage = useCallback((imgId: number) => {
     setCapturedImages((prevImages) =>
       prevImages.filter((img) => img.id !== imgId)
     );
@@ -73,21 +75,21 @@ export function useUburuPdfScanner({ fileName }) {
     }
 
     const pdf = new jsPDF();
+    const canvas = uburuCanvasRef.current;
 
     capturedImages.forEach((img, index) => {
       if (index > 0) pdf.addPage();
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight =
-        (uburuCanvasRef.current.height * pdfWidth) /
-        uburuCanvasRef.current.width;
+      if (canvas) {
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-      // Add the image to the PDF
-      pdf.addImage(img.data, "JPEG", 0, 0, pdfWidth, pdfHeight); // Use JPEG format
+        pdf.addImage(img.data, "JPEG", 0, 0, pdfWidth, pdfHeight);
+      }
     });
 
     pdf.save(`${fileName ?? "uburu-scanned-document"}.pdf`);
     setCapturedImages([]);
-  }, [capturedImages]);
+  }, [capturedImages, fileName]);
 
   const uploadUburuScanPDF = useCallback(async () => {
     if (capturedImages.length === 0) {
@@ -123,7 +125,6 @@ export function useUburuPdfScanner({ fileName }) {
   }, [capturedImages]);
 
   useEffect(() => {
-    // Clean up the media stream on component unmount
     return () => {
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
@@ -139,7 +140,7 @@ export function useUburuPdfScanner({ fileName }) {
     turnOffUburuScanCamera,
     captureUburuScanImage,
     deleteUburuImage,
-    uploadUburuScanPDF,
     downloadUburuScanPDF,
+    uploadUburuScanPDF,
   };
 }
