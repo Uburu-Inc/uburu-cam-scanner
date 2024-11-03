@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uburu Web Document Scanner</title>
+    <link rel="stylesheet" href="uburu-cam-scanner-style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <h1>Web Document Scanner</h1>
+    <video id="uburu-video" autoplay playsinline></video>
+    <canvas id="uburu-canvas"></canvas>
+
+    <div id="uburu-doc-logs"></div>
+
+    <div id="uburu-controls">
+      <button id="turn-on-uburu-scan-camera">Turn On Camera</button>
+      <button id="turn-off-uburu-scan-camera">Turn Off Camera</button>
+      <button id="capture-uburu-scan-image">Capture</button>
+      <button id="download-uburu-scan-pdf">Download as PDF</button>
+    </div>
+
+    <script src="uburu-cam-scanner-script.js"></script>
+  </body>
+</html>

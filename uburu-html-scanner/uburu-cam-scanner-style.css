@@ -1,0 +1,19 @@
+#uburu-video, #uburu-canvas {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ddd;
+}
+
+#uburu-controls {
+    display: flex;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+#uburu-controls button {
+    padding: .6rem;
+}
+
+#uburu-canvas {
+    display: none !important;
+}
