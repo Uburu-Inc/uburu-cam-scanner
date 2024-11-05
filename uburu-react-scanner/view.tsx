@@ -1,3 +1,5 @@
+// Install required packages
+
 import React from "react";
 import { useUburuPdfScanner } from "./uburu-pdf-scanner";
 

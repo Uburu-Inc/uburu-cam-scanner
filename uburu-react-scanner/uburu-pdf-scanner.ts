@@ -1,4 +1,4 @@
-// Install required templates
+// Install the required packages
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import jsPDF from "jspdf";
@@ -15,6 +15,7 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [capturedImages, setCapturedImages] = useState<CapturedImage[]>([]);
   const [loadingCameraView, setLoadingCameraView] = useState(false);
+  const [uploadingPDF, setUploadingPDF] = useState(false);
 
   const turnOnUburuScanCamera = useCallback(async () => {
     setLoadingCameraView(true);
@@ -52,7 +53,6 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
 
       const imgData = uburuCanvas.toDataURL("image/jpeg", 0.7);
       const imgId = Date.now();
-      console.log("Captured image data:", imgData);
       setCapturedImages((prevImages) => [
         ...prevImages,
         { id: imgId, data: imgData },
@@ -111,16 +111,23 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
     const pdfBlob = pdf.output("blob");
 
     try {
+      setUploadingPDF(true);
       const response = await axios.post("/upload-endpoint", pdfBlob, {
         headers: {
           "Content-Type": "application/pdf",
         },
       });
+      setUploadingPDF(false);
       console.log("PDF uploaded successfully:", response.data);
     } catch (error) {
+      setUploadingPDF(false);
       console.error("Error uploading PDF:", error);
     }
   }, [capturedImages]);
+
+  const deleteAllImages = useCallback(() => {
+    setCapturedImages([]);
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -135,6 +142,8 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
     uburuCanvasRef,
     capturedImages,
     loadingCameraView,
+    uploadingPDF,
+    deleteAllImages,
     turnOnUburuScanCamera,
     turnOffUburuScanCamera,
     captureUburuScanImage,
