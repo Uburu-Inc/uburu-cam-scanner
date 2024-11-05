@@ -1,3 +1,5 @@
+// Install required templates
+
 import { useRef, useState, useEffect, useCallback } from "react";
 import jsPDF from "jspdf";
 import axios from "axios";

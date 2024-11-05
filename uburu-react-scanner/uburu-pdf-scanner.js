@@ -1,3 +1,5 @@
+// Install the required modules
+
 import { useRef, useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
@@ -7,12 +9,15 @@ export function useUburuPdfScanner({ fileName }) {
   const uburuCanvasRef = useRef(null);
   const [stream, setStream] = useState(null);
   const [capturedImages, setCapturedImages] = useState([]);
+  const [loadingCameraView, setLoadingCameraView] = useState(false);
 
   const turnOnUburuScanCamera = useCallback(async () => {
+    setLoadingCameraView(true);
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: "environment" },
       });
+      setLoadingCameraView(false);
       setStream(mediaStream);
       if (uburuVideoRef.current) uburuVideoRef.current.srcObject = mediaStream;
     } catch (error) {
@@ -20,6 +25,7 @@ export function useUburuPdfScanner({ fileName }) {
       console.log(
         "Could not access the camera. Please check your permissions."
       );
+      setLoadingCameraView(false);
     }
   }, []);
 
@@ -135,6 +141,7 @@ export function useUburuPdfScanner({ fileName }) {
     uburuVideoRef,
     uburuCanvasRef,
     capturedImages,
+    loadingCameraView,
     turnOnUburuScanCamera,
     turnOffUburuScanCamera,
     captureUburuScanImage,
