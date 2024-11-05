@@ -108,7 +108,11 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
       }
     });
 
+    // Not explicit PDF output
     const pdfBlob = pdf.output("blob");
+
+    // More explicit PDF output
+    // const pdfBlob = new Blob([pdf.output("arraybuffer")], { type: "application/pdf" });
 
     try {
       setUploadingPDF(true);
