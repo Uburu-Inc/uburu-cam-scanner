@@ -12,17 +12,21 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
   const uburuCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [capturedImages, setCapturedImages] = useState<CapturedImage[]>([]);
+  const [loadingCameraView, setLoadingCameraView] = useState(false);
 
   const turnOnUburuScanCamera = useCallback(async () => {
+    setLoadingCameraView(true);
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: "environment" },
       });
+      setLoadingCameraView(false);
       setStream(mediaStream);
       if (uburuVideoRef.current) uburuVideoRef.current.srcObject = mediaStream;
     } catch (error) {
       console.error("Error accessing the camera:", error);
       console.log("Could not access the camera. Please check your permissions.");
+      setLoadingCameraView(false);
     }
   }, []);
 
@@ -42,13 +46,7 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
       uburuCanvas.width = uburuVideo.videoWidth;
       uburuCanvas.height = uburuVideo.videoHeight;
       const context = uburuCanvas.getContext("2d");
-      context?.drawImage(
-        uburuVideo,
-        0,
-        0,
-        uburuCanvas.width,
-        uburuCanvas.height
-      );
+      context?.drawImage(uburuVideo, 0, 0, uburuCanvas.width, uburuCanvas.height);
 
       const imgData = uburuCanvas.toDataURL("image/jpeg", 0.7);
       const imgId = Date.now();
@@ -63,9 +61,7 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
   }, []);
 
   const deleteUburuImage = useCallback((imgId: number) => {
-    setCapturedImages((prevImages) =>
-      prevImages.filter((img) => img.id !== imgId)
-    );
+    setCapturedImages((prevImages) => prevImages.filter((img) => img.id !== imgId));
   }, []);
 
   const downloadUburuScanPDF = useCallback(() => {
@@ -136,6 +132,7 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
     uburuVideoRef,
     uburuCanvasRef,
     capturedImages,
+    loadingCameraView,
     turnOnUburuScanCamera,
     turnOffUburuScanCamera,
     captureUburuScanImage,
