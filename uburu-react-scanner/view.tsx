@@ -13,6 +13,7 @@ const UburuPdfScanner = () => {
     captureUburuScanImage,
     deleteUburuImage,
     downloadUburuScanPDF,
+    deleteAllUburuCapturedImages
   } = useUburuPdfScanner({});
 
   return (

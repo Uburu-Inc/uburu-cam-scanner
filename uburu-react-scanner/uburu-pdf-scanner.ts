@@ -125,7 +125,7 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
     }
   }, [capturedImages]);
 
-  const deleteAllImages = useCallback(() => {
+  const deleteAllUburuCapturedImages = useCallback(() => {
     setCapturedImages([]);
   }, []);
 
@@ -143,7 +143,7 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
     capturedImages,
     loadingCameraView,
     uploadingPDF,
-    deleteAllImages,
+    deleteAllUburuCapturedImages,
     turnOnUburuScanCamera,
     turnOffUburuScanCamera,
     captureUburuScanImage,
