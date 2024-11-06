@@ -21,7 +21,7 @@ export function useUburuPdfScanner({ fileName }: { fileName?: string }) {
     setLoadingCameraView(true);
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "environment" },
+        video: { facingMode: { ideal: "environment" } }
       });
       setLoadingCameraView(false);
       setStream(mediaStream);

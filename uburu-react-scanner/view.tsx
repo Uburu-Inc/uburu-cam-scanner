@@ -13,7 +13,7 @@ const UburuPdfScanner = () => {
     captureUburuScanImage,
     deleteUburuImage,
     downloadUburuScanPDF,
-    deleteAllUburuCapturedImages
+    deleteAllUburuCapturedImages,
   } = useUburuPdfScanner({});
 
   return (
@@ -23,10 +23,10 @@ const UburuPdfScanner = () => {
       <video
         ref={uburuVideoRef}
         autoPlay
-        className="border-2 border-gray-300 mb-2"
-        style={{ width: "100%", maxWidth: "500px" }}
+        playsInline
+        style={{ display: "block" }}
       ></video>
-
+      
       <canvas ref={uburuCanvasRef} style={{ display: "none" }}></canvas>
 
       <div className="captured-images">
