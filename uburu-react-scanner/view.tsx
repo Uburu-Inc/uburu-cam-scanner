@@ -24,9 +24,10 @@ const UburuPdfScanner = () => {
         ref={uburuVideoRef}
         autoPlay
         playsInline
+        muted
         style={{ display: "block" }}
       ></video>
-      
+
       <canvas ref={uburuCanvasRef} style={{ display: "none" }}></canvas>
 
       <div className="captured-images">
