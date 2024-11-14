@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA File</title>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif;
+        line-height: 1.6;
+      }
+      .container {
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 800px;
+      }
+      h3,
+      h4 {
+        text-align: left;
+        margin-bottom: 1.5rem;
+      }
+      p,
+      ul {
+        margin: 0.6rem 0;
+      }
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      #info_description {
+        display: flex;
+        justify-content: end;
+      }
+      #info_description > p {
+        font-weight: bold;
+        font-family: sans-serif !important;
+        font-size: 0.8rem;
+      }
+      #main_heading {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      #signatory {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+      }
+
+      #signatory > div {
+        width: 48%;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .gap-3 {
+        gap: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Welcome to Uburu.ai, a health data switch platform that connects
+        multiple unconnected health systems and facilitates the flow of
+        health-related information between them (the “Service”).
+      </p>
+
+      <p>
+        Uburu.ai is a product of Uburu Technology Platforms Ltd (“Uburu
+        Health”), which can be assessed through the Website (www.Uburu.ai),
+        mobile, tablet, or other applications made available by Uburu Health.
+      </p>
+
+      <p>
+        By accessing, downloading, installing, or otherwise using
+        https://uburu.ai (the “Software”), in any way, you agree to comply with
+        these Terms of Use. If you do not agree, you must cease use of the
+        Software immediately.
+      </p>
+
+      <p>
+        In this Terms of Use, reference to “User”, “You” or “Your” shall mean a
+        User of this Service and the Software (the “Platform”).
+      </p>
+
+      <p>
+        The Terms of Use (as amended from time to time by Uburu Health in its
+        sole discretion), along with our Privacy Notice available here
+        (https://uburu.ai/legal), and any other agreement that you have executed
+        with us each included herein by reference, form a legally binding
+        contract between you and Uburu Health regarding your use of this
+        Platform.
+      </p>
+
+      <p>
+        Please read the Terms of Use carefully before accessing or using this
+        Platform.
+      </p>
+
+      <h3>1. Nature and Applicability of Terms</h3>
+
+      <p>
+        Each time you access or use this Platform, you, and if you are acting on
+        behalf of a third party, such third party, agrees to be bound by this
+        Terms of Use and our Privacy Notice whether or not you register with us.
+        If you do not agree to be bound by the Terms of Use and our Privacy
+        Notice, you may not access or use our Website, Service, or Software.
+      </p>
+
+      <p>
+        Please review our Privacy Notice, which explains how Uburu Health
+        handles your personal data when you use this Platform. If you agree to
+        each of the Terms of Use and our Privacy Notice, please type in your
+        full legal name at the bottom of this Terms of Use.
+      </p>
+
+      <h3>2. Eligibility for Our Service</h3>
+
+      <p>
+        By using this Platform, you represent and warrant that you or your
+        authorized representative have attained the age of majority where you
+        reside (18 years of age in most jurisdictions) and are otherwise capable
+        of entering into binding contracts including this Terms of Use. If you
+        are using this Platform on behalf of another party including, without
+        limitation, a patient, you represent and warrant that you have authority
+        to act on behalf of that party and to bind that party to this Terms of
+        Use. If you are using this Platform on behalf of a party under the age
+        of majority, you certify that you have the authority to use this
+        Platform on their behalf.
+      </p>
+
+      <h3>3. Terms of Use Applicable to All Users</h3>
+
+      <p>
+        a. Uburu.ai provides a service that allows Users to request, receive
+        and/or transmit their personal health-related information remotely at a
+        fee, provided that the User’s visited/used/frequented health providers
+        are on Uburu.ai.
+      </p>
+
+      <p>
+        By inputting your full legal name at the bottom of this Terms of Use,
+        you authorize Uburu.ai to act as your attorney and request, process,
+        collate, release, and transmit such health-related information to you
+        and other Users, subject to your rights under our privacy policy and the
+        relevant law.
+      </p>
+
+      <p>
+        You agree that Uburu.ai shall not be held liable for any claims,
+        liability, damages, losses, etc., arising from the processing and
+        release of your health-related information.
+      </p>
+
+      <p>
+        b. Uburu.ai provides a data portability option for data subjects to
+        request the transmission of their personal health-related information to
+        other health systems on the platform at a fee, subject to the data
+        portability rules in the relevant law.
+      </p>
+
+      <p>
+        c. Health-related information includes, without limitation, any data,
+        and information related to a patient’s physical, mental, and medical
+        condition, health and treatment, including payment for such treatment.
+      </p>
+
+      <p>
+        d. Any modifications and new features added to the Platform are also
+        subject to this Terms of Use.
+      </p>
+
+      <p>
+        e. All rights, title, and interest in and to the Platform and its
+        components (including all software, technology, copyrights, and other
+        intellectual property rights) will remain with and belong exclusively to
+        Uburu Health.
+      </p>
+
+      <h3>4. Accounts and Registration</h3>
+
+      <p>
+        a. To access the features of this Platform, you will be required to
+        register for an account. When you register for an account, you will be
+        required to provide us with some information about yourself (such as
+        your name, date of birth, e-mail address, physical address, phone
+        number, company name, or other personal information). Some of this
+        information may be of a confidential nature and may include personally
+        identifiable information or “PII” (all “Your Information”).
+      </p>
+
+      <p>
+        b. If you provide Your Information to us then you agree to provide true,
+        current, complete, and accurate information, and not to misrepresent
+        your identity. You also agree to keep Your Information current and to
+        update Your Information if any of Your Information changes.
+      </p>
+
+      <p>
+        c. Our collection, use, and disclosure of Your Information are governed
+        by this Terms of Use, our Privacy Policy, and any applicable law.
+      </p>
+
+      <h3>5. Screening Users</h3>
+
+      <p>
+        Although we retain the right to do so, Uburu Health does not screen
+        Users or verify information communicated through the Platform. Uburu
+        Health also retains the right to monitor all communication and
+        information transmitted using our Platform. Uburu Health may, at its
+        sole discretion, take steps to verify your identity at any time. You
+        agree and authorize that we may use and disclose information, including
+        PII, about you for such purposes, including making inquiries of third
+        parties concerning your identity. You further authorize such third
+        parties to disclose to us such information, as we may request for such
+        purposes, and you agree to hold them and us harmless from any claim or
+        liability arising from the request for or disclosure of such
+        information. Unless otherwise agreed under any other agreement signed by
+        the parties, you agree that we may terminate your access to the Service
+        at any time, without liability to us, if we are unable at any time, to
+        determine or verify your identity. You may contact us at Hello@Uburu.ai
+        to notify us of inappropriate or illegal conduct or content you
+        encounter on the Service.
+      </p>
+
+      <h3>6. Account Management</h3>
+
+      <p>
+        a. Keep Your Password Secure. If you have been issued an account by
+        Uburu Health in connection with your use of the Platform, you are
+        responsible for safeguarding your password and any other credentials
+        used to access that account, even if you authorize a third party to
+        access your account. You, and not Uburu Health, are responsible for any
+        activity occurring on your account, including, but not limited to,
+        incidences where your password has been compromised. If you become aware
+        of any unauthorized access to your account, you should notify Uburu
+        Health immediately. You shall also conduct internal investigations and
+        where it is determined that such an account has been compromised at your
+        instance and shall be solely responsible for the direct losses incurred
+        by Uburu Health and others (including patients) due to any unauthorized
+        use of your account.
+      </p>
+
+      <p>
+        b. Keep Your Details Accurate. Uburu Health may send notices to the
+        email address or text messages to your mobile phone registered with your
+        account. You must keep your email address, mobile phone number, and,
+        where applicable, your contact details and payment details associated
+        with your account current and accurate.
+      </p>
+
+      <h3>7. Breach Notification Policy</h3>
+
+      <p>
+        If you suspect or learn that the security of the Service and the data
+        contained therein has been breached or compromised, you agree to
+        immediately notify us at Hello@Uburu.ai You agree that the User, and not
+        Uburu Health, shall be responsible for the legal consequences of failing
+        to comply with Uburu Health’s breach notification policy, and you shall
+        hold Uburu Health free from any liability arising from such failure to
+        provide notification following the breach or compromise of the Service
+        data.
+      </p>
+
+      <h3>8. Your License, Access and Use of our Platform</h3>
+      <p>
+        a. Your right to access and use our Platform is personal to you and is
+        not transferable by you to any other person or entity. You are only
+        entitled to access and use our Platform for lawful purposes and pursuant
+        to the terms and conditions of this Terms of Use and our Privacy Policy.
+        Any action by you that, i) violates the terms and conditions of this
+        Terms of Use and/or the Privacy Policy; (ii) restricts, inhibits or
+        prevents any access, use or enjoyment of our Platform; or (iii) through
+        the use of our Platform, defames, abuses, harasses, offends or threatens
+        others, shall not be permitted, and may result in your loss of the right
+        to access, and use our Platform if so determined by any applicable law.
+      </p>
+      <p>
+        b. The rights granted to you in these Terms are subject to restrictions.
+        You therefore agree that you shall not encourage or authorize any third
+        party to directly or indirectly: (i) copy, publish, distribute, license,
+        sublicense, sell, resell, rent, lease, transfer, assign, host, or
+        otherwise commercially exploit the Platform including as a service
+        bureau or outsourcing offering or otherwise access or use the Platform
+        other than as expressly permitted hereunder; (ii) modify, make
+        derivative works of, disassemble, reverse compile or reverse engineer
+        any part of the Platform; (iii) access the Platform in order to build a
+        similar or competitive Platform; and (iv) except as expressly stated
+        herein, no part of the Platform may be copied, reproduced, distributed,
+        republished, downloaded, displayed, posted or transmitted in any form or
+        by any means. Any future release, update, or other addition to
+        functionality of the Platform shall be subject to these Terms.
+      </p>
+      <p>
+        c. Furthermore, you agree that you will not use any robot, spider,
+        scraper, deep link or other similar automated data gathering or
+        extraction tools, program, algorithm or methodology to access, acquire,
+        copy or monitor our Platform or any portion of our Platform or for any
+        other purpose, without our prior written permission. Additionally, you
+        agree that you will not: (i) copy, reproduce, modify, create derivative
+        works from, distribute or publicly display any content (except for your
+        personal information) from our Platform without our prior written
+        permission and the appropriate third party, as applicable; (ii)
+        interfere or attempt to interfere with the proper working of our
+        Platform or any activities conducted on our Platform; (iii) bypass any
+        robot exclusion headers or other measures we may use to prevent or
+        restrict access to our Platform, or (iv) interfere or disrupt the
+        Service or servers or networks connected to the Platform, including by
+        transmitting any worms, viruses, spyware, malware or any other code of a
+        destructive or disruptive nature.
+      </p>
+      <h3>9. Unacceptable Use of our Platform</h3>
+      <p>
+        a. You shall not permit any person using your device or account to: (i)
+        use this Platform in a way that causes or could cause damage or restrict
+        the availability or accessibility of the Platform; (ii) extract, mine,
+        scrap proprietary and personal data from this Platform without our
+        express and written permission; (iii) store, copy, transmit, publish or
+        distribute any computer virus, spyware, Trojan horse, worm, keystroke
+        logger or other malicious software via this Platform; (iv) conduct any
+        fraudulent or illegal activities via the Platform.
+      </p>
+      <p>
+        b. You understand and agree that if any fraudulent activity is
+        associated with the operation of your account, we shall have the right
+        to apply restrictions to your account and report it to the appropriate
+        law enforcement agencies.
+      </p>
+
+      <h3>10. Information Accuracy</h3>
+      <p>
+        a. We attempt to ensure that information on this Platform is complete,
+        accurate and current. Despite our best efforts, the information on our
+        Platform may occasionally be inaccurate, incomplete or out of date. We
+        make no representation, warranty, or guarantee regarding the
+        reliability, completeness, accuracy, or currency of any information on
+        the Platform.
+      </p>
+      <p>
+        b. Furthermore, information on the Platform may contain typographical
+        errors, inaccuracies, or omissions. We reserve the right to correct or
+        make changes in such information at any time without notice. Provided
+        that such changes shall not affect the user’s ability to access or use
+        the Platform.
+      </p>
+      <h3>11. User Content Rights and Related Responsibilities;</h3>
+      <p>
+        a. “User Content”, means, without limitation, any messages, texts,
+        digital files, images, photos, personal profile, artwork, videos, audio,
+        comments, feedback, suggestions, and documents, or any other content you
+        upload, transmit or otherwise make available to Uburu Health and its
+        Users via the Platform. We may, in our sole discretion, permit you to
+        from time to time, submit, upload, publish or otherwise make available
+        to us, through the Platform any User Content. You represent and warrant
+        that you own or otherwise control the rights to your User Content and
+        that every part thereof, is an original work by you, or you have
+        obtained all rights, licenses, consents and permissions necessary to use
+        those parts at all times. You further agree to indemnify Uburu Health
+        and its affiliates for all claims arising from or in connection with any
+        claims to any rights in your User Content or any damages arising from
+        your User Content.
+      </p>
+      <p>
+        b. By submitting User Content on or through the Platform, you grant
+        Uburu Health a perpetual, irrevocable, transferable, assignable,
+        worldwide, non-exclusive, royalty-free license to access, use,
+        reproduce, transmit, print, publish, distribute, redistribute, copy,
+        host, store, cache, archive, index, categorize such User Content
+        (without attribution and the requirement of any permission from or
+        payment to you, or any other person or entity) as permitted under the
+        applicable laws.
+      </p>
+      <p>
+        c. Uburu Health expressly disclaims any liability for the loss or damage
+        to any User Content or any losses or damages you incur as a result of
+        the loss or damage of any User Content. It is your responsibility to
+        back up any User Content to prevent its loss.
+      </p>
+      <p>
+        d. You are solely responsible for your User Content, including, without
+        limitation, comments and feedback.
+      </p>
+      <p>
+        e. User warrants and agrees not to: (i) publish falsehoods or
+        misrepresentations that could cause injury, loss, or damage to Uburu
+        Health or any third party; (ii) submit material that is unlawful,
+        obscene, lewd, defamatory, libelous, threatening, pornographic,
+        harassing, hateful, racially or ethnically offensive, violent, or
+        encourages conduct that would be considered a criminal offense, give
+        rise to civil liability, violate any law, or is otherwise inappropriate
+        or objectionable; (iii) post advertisements or solicitations of
+        business; (iv) impersonate another person; or (v) submit copyrighted
+        material, protected by trade secret or otherwise subject to third party
+        intellectual property or proprietary rights, including privacy and
+        publicity rights unless you are the owner of such rights or have
+        permission from their rightful owner to post the material and to grant
+        Uburu Health all of the license rights granted herein.
+      </p>
+      <p>
+        f. Notwithstanding the foregoing, Uburu Health assumes no responsibility
+        for monitoring the Service for inappropriate content or modifying or
+        removing such content from the Platform.
+      </p>
+      <h3>12. Interruption of Service</h3>
+      <p>
+        Your access and use of our Platform may be interrupted for any of
+        several reasons, including, without limitation, the malfunction of
+        equipment, periodic updating, maintenance or repair of our Services,
+        Software, or other actions that we may elect to take. Uburu Health shall
+        have no liability for any damage or loss caused as a result of such
+        interruptions.
+      </p>
+      <h3>13. Third Party Link, Services and Content</h3>
+      <p>
+        The Platform may contain features, services and functionalities linking
+        you to, or providing you with access to third party services and
+        content, websites, directories, servers, networks, systems, information,
+        databases, applications, software, programs, courses, services, and the
+        Internet as a whole. Because we have no control over such sites and
+        resources, we are not responsible for the availability of such external
+        sites or resources, and do not endorse and are not responsible or liable
+        for any content, advertising, courses or other materials on or available
+        from such sites or resources. When you visit or use a third party’s
+        website you agree to read and consent to the third party’s Terms of Use
+        and Privacy Policy and you release us from any liability.
+      </p>
+      <h3>14. Rights and Obligations Relating to Content</h3>
+      <p>
+        a. Uburu Health hereby informs Users that they are not permitted to
+        host, display, upload, modify, publish, transmit, update or share any
+        information that:
+      </p>
+      <p>
+        i. belongs to another person and to which the User does not have any
+        right to;
+      </p>
+      <p>
+        ii. is grossly harmful, harassing, blasphemous, defamatory, obscene,
+        pornographic, pedophilic, libelous, invasive of another’s privacy,
+        hateful, or racially, ethnically objectionable, disparaging, relating or
+        encouraging money laundering or gambling, or otherwise unlawful in any
+        manner whatever;
+      </p>
+      <p>iii. harm minors in any way;</p>
+      <p>
+        iv. infringes any patent, trademark, copyright or other proprietary
+        rights;
+      </p>
+      <p>v. violates any law for the time being in force;</p>
+      <p>vii. impersonates another person; and</p>
+      <p>
+        viii. contains software viruses or any other computer code, files or
+        programs designed to interrupt, destroy or limit the functionality of
+        any computer resource;
+      </p>
+      <p>
+        viii. contains software viruses or any other computer code, files or
+        programs designed to interrupt, destroy or limit the functionality of
+        any computer resource;
+      </p>
+      <p>b. Users are also prohibited from:</p>
+      <p>
+        i. violating or attempting to violate the integrity or security of the
+        Website or any Uburu Health Content;
+      </p>
+      <p>
+        ii. intentionally submitting on the Website any incomplete, false or
+        inaccurate information;
+      </p>
+      <p>iii. making any unsolicited communications to other Users;</p>
+      <p>
+        iv. using any engine, software, tool, agent or other device or mechanism
+        (such as spiders, robots, avatars or intelligent agents) to navigate or
+        search the Website;
+      </p>
+      <p>
+        v. attempting to decipher, decompile, disassemble or reverse engineer
+        any part of the Website;
+      </p>
+      <p>
+        vi. copying or duplicating in any manner any of the Uburu Health Content
+        or other information available from the Website without consent;
+      </p>
+      <p>
+        vii. circumventing or disabling any digital rights management, usage
+        rules, or other security features of the platform.
+      </p>
+      <p>
+        c. Uburu Health, upon obtaining knowledge by itself or being brought to
+        actual knowledge by an affected person in writing or through email about
+        any such information as mentioned above, shall be entitled to disable
+        such information that is in contravention of this Term of Use. Uburu
+        Health shall also be entitled to preserve such information and
+        associated records for at least 90 (ninety) days for production to
+        governmental authorities for investigation purposes.
+      </p>
+      <p>
+        d. In case of non-compliance with any applicable laws, rules or
+        regulations, or the Agreement (including the Privacy Policy) by a User,
+        Uburu Health has the right to immediately terminate the access or usage
+        rights of the User to the platform and Services and to remove
+        non-compliant information from the Website.
+      </p>
+      <p>
+        f. Uburu Health respects the intellectual property rights of others and
+        we do not hold any responsibility for any violations of any intellectual
+        property rights.
+      </p>
+      <h3>15. Termination</h3>
+      <p>
+        a. Uburu Health reserves the right to suspend or terminate a User’s
+        access to the Application or Website and the Services, with or without
+        notice and to exercise any other remedy available under law, in cases
+        where,
+      </p>
+      <p>i. Such User breaches any terms and conditions of the Agreement;</p>
+      <p>
+        ii. A third-party reports violation of any of its right as a result of
+        your use of the Platform;
+      </p>
+      <p>
+        iii. Uburu Health is unable to verify or authenticate any information
+        provided to Uburu Health by a User;
+      </p>
+      <p>
+        iv. Uburu Health has reasonable grounds for suspecting any illegal,
+        fraudulent or abusive activity on the part of such User; or
+      </p>
+      <p>
+        v. Uburu Health believes, in its sole discretion, that User’s actions
+        may cause legal liability for such User, other Users, or for Uburu
+        Health or are contrary to the interests of the Application or Website.
+      </p>
+      <p>
+        b. Once temporarily suspended, indefinitely suspended, or terminated,
+        the User may not continue to use the Application or Website under the
+        same account, a different account, or re-register under a new account.
+        On termination of an account due to the reasons mentioned herein, such
+        User shall no longer have access to data, messages, files and other
+        material kept on the Application or Website by such User. The User shall
+        ensure that he/she/it has continuous backup of any medical services the
+        User has rendered in order to comply with the User’s record keeping
+        process and practices.
+      </p>
+      <h3>16. Limitation of Liability</h3>
+      <p>
+        In no event, including but not limited to negligence, shall Uburu
+        Health, or any of its directors, officers, employees, agents or content
+        or service providers (collectively, the “Protected Entities”) be liable
+        for any direct, indirect, special, incidental, consequential, exemplary
+        or punitive damages arising from, or directly or indirectly related to,
+        the use of, or the inability to use, the Application or the Content,
+        materials, and functions related thereto, User’s provision of
+        information via the Application, lost business or lost Users. In no
+        event shall the Protected Entities be liable for:
+      </p>
+      <p>
+        a. any content posted, transmitted, exchanged or received by or on
+        behalf of any User or other person on or through the Application;
+      </p>
+      <p>
+        b. any unauthorized access to or alteration of your transmissions or
+        data; or
+      </p>
+      <p>c. any other matter relating to the Application.</p>
+      <p>
+        In no event shall the total aggregate liability of the Protected
+        Entities to a User for all damages, losses and causes of action (whether
+        in contract or tort, including, but not limited to, negligence or
+        otherwise) arising from this Agreement or a User’s use of the Website or
+        the Services or the Platform exceed the cost of the relevant Service
+      </p>
+      <h3>17. ​Disclaimers; No Warranties</h3>
+      <p>
+        a. SAVE AS OTHERWISE AGREED IN WRITING BY PARTIES, THE UBURU HEALTH
+        PARTIES DO NOT WARRANT THAT THE SERVICES OR THE SERVERS THAT MAKE THE
+        PLATFORM AVAILABLE WILL BE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS,
+        OR THAT ANY PRODUCT DESCRIPTION OR OTHER CONTENT OFFERED AS PART OF THE
+        SERVICES ARE ACCURATE, RELIABLE, CURRENT OR COMPLETE.
+      </p>
+      <p>
+        b. YOU EXPRESSLY AGREE THAT YOUR USE OF THE PLATFORM IS AT YOUR SOLE
+        RISK. IF YOU DOWNLOAD ANY CONTENT ON THE PLATFORM, YOU DO SO AT YOUR OWN
+        DISCRETION AND RISK. YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO
+        YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF
+        SUCH CONTENT THROUGH THE PLATFORM.
+      </p>
+      <p>
+        C. YOU AGREE TO DEFEND AND HOLD UBURU HEALTH AND ANY OF ITS PROTECTED
+        ENTITIES HARMLESS AGAINST ANY AND ALL LEGAL CLAIMS AND DEMANDS,
+        INCLUDING REASONABLE ATTORNEY’S FEES, WHICH MAY ARISE FROM OR RELATE TO
+        YOUR USE OR MISUSE OF THE PLATFORM, YOUR BREACH OF THIS ‘TERMS OF USE OR
+        YOUR ACTIONS. YOU AGREE THAT UBURU HEALTH SHALL BE FREE TO ELECT ITS OWN
+        LEGAL COUNSEL AND PARTICIPATE IN ITS OWN DEFENSE IF IT WISHES.
+      </p>
+      <h3>18. Medical Disclaimer</h3>
+      <p>
+        THIS WEBSITE, SOFTWARE, SERVICES, AND THE PLATFORM PROVIDED BY UBURU
+        HEALTH ARE NOT DESIGNED TO AND DO NOT PROVIDE MEDICAL ADVICE,
+        PROFESSIONAL MEDICAL DIAGNOSIS OR OPINION, MEDICAL TREATMENT,
+        PSYCHOLOGICAL THERAPY, OR MEDICAL SERVICES. YOUR USE OF OUR SERVICES
+        DOES NOT CREATE A PATIENT/PHYSICIAN RELATIONSHIP AND IS NOT A SUBSTITUTE
+        FOR PROFESSIONAL MEDICAL ADVICE, DIAGNOSIS OR TREATMENT BY A PHYSICIAN,
+        OR OTHER HEALTHCARE PROVIDER. IF YOU BELIEVE YOU ARE CONFRONTED WITH ANY
+        HEALTH PROBLEM OR MEDICAL CONDITION, YOU SHOULD PROMPTLY CONSULT YOUR
+        PHYSICIAN OR OTHER HEALTHCARE PROVIDER. NEVER DISREGARD MEDICAL OR
+        PROFESSIONAL ADVICE, OR DELAY SEEKING IT, BECAUSE OF INFORMATION YOU
+        HAVE RECEIVED THROUGH OUR SERVICES. IF YOU ARE PRESENTED WITH A MEDICAL
+        EMERGENCY YOU SHOULD IMMEDIATELY CALL FOR EMERGENCY MEDICAL ASSISTANCE
+        OR YOUR PHYSICIAN.
+      </p>
+      <h3>19. APPLICABLE LAW AND DISPUTE SETTLEMENT</h3>
+      <p>
+        19.1. You agree that this Terms of Use and any contractual obligation
+        between Uburu Health and User will be governed by the laws of the
+        Federal Republic of Nigeria.
+      </p>
+      <p>
+        19.2. If a dispute or difference arises as to the validity,
+        interpretation, effects, or rights and obligations of the Parties under
+        this Terms of Use, the Parties shall use their best endeavor to reach an
+        amicable settlement of the dispute.
+      </p>
+      <p>
+        19.3. If any such dispute is not settled between the Parties within
+        fourteen (14) days, the Parties agree to submit such dispute to
+        Mediation at the Lagos State Multi-Door Courthouse (LMDC) for resolution
+        under the provisions of Lagos State Multi-Door Courthouse (LMDC) Law
+        2007.
+      </p>
+      <h3>20. CONTACT INFORMATION</h3>
+      <p>
+        If a User has any questions concerning Uburu Health, the Website or
+        application, the Platform, this Terms of Use, or anything related to any
+        of the foregoing, Uburu Health User support can be reached at the
+        following email address: Hello@Uburu.ai
+      </p>
+
+      <p>Authorizing Signatory</p>
+
+      <p style="text-align: center">User Name</p>
+      <hr />
+
+      <div style="margin-top: 10px" class="flex gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="margin-top: 13px"
+        >
+          <polyline points="9 11 12 14 22 4"></polyline>
+          <path
+            d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+          ></path>
+        </svg>
+        <div>
+          <p>Please tick the box to indicate your consent to the following:</p>
+          <p>
+            (1)You agree to use your electronic signature as a form of consent
+            to this legal agreement.
+          </p>
+          <p>
+            (2)You have read and agreed to our
+            <a href="https://www.uburu.ai/legal?=privacy_notice"
+              >Privacy Notice.</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
